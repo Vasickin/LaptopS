@@ -10,4 +10,12 @@ public class Laptop {
     private int displaySize;
     private String color;
 
+    public Laptop(String brand, int ram, int storageCapacity, String operatingSystem, String color) {
+        this.brand = brand;
+        this.ram = ram;
+        this.storageCapacity = storageCapacity;
+        this.operatingSystem = operatingSystem;
+        this.color = color;
+    }
+
 }
