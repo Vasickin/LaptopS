@@ -80,4 +80,39 @@ public class LaptopStore {
         }
     }
 
+    public Map<String, Object> getFiltersFromUser() {
+        Map<String, Object> filters = new HashMap<>();
+
+        System.out.println("Выберите критерии фильтрации:");
+
+        System.out.print("Введите объем пвмяти RAM (8Mb, 16Mb, 32Mb): ");
+        int ram = scanner.nextInt();
+        filters.put("ram", ram);
+
+        scanner.nextLine(); // Очистка буфера после ввода int для корректного считывания строк
+
+        System.out.print("Введите операционную систему (Windows, Linux, FreeOS): ");
+        String operatingSystem = scanner.nextLine();
+        filters.put("operatingSystem", operatingSystem);
+
+        System.out.print("Введите объем накопителя (256Gb, 512Gb, 1024Gb): ");
+        int storageCapacity = scanner.nextInt();
+        filters.put("storageCapacity", storageCapacity);
+
+        scanner.nextLine(); // Очистка буфера после ввода int для корректного считывания строк
+
+        System.out.print("Введите цвет: ");
+        String color = scanner.nextLine();
+        filters.put("color", color);
+
+        System.out.print("Введите размер диагонали дисплея (13`, 15`, 17`): ");
+        int displaySize = scanner.nextInt();
+        filters.put("displaySize", displaySize);
+
+        scanner.nextLine(); // Очистка буфера после ввода int для корректного
+        // считывания строк
+
+        return filters;
+    }
+
 }
