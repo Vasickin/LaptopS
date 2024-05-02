@@ -20,5 +20,7 @@ package LaptopStore;
 import java.util.*;
 
 public class LaptopStore {
+    private Set<Laptop> laptops = new HashSet<>();
     
+
 }
