@@ -27,4 +27,57 @@ public class LaptopStore {
         laptops.add(laptop);
     }
 
+    public void filterLaptops(Map<String, Object> filters) {
+        List<String> matchingBrands = new ArrayList<>();
+
+        for (Laptop laptop : laptops) {
+            boolean passFilter = true;
+            for (Map.Entry<String, Object> entry : filters.entrySet()) {
+                String key = entry.getKey();
+                Object value = entry.getValue();
+
+                switch (key) {
+                    case "ram":
+                        if (laptop.getRam() < (int) value) {
+                            passFilter = false;
+                        }
+                        break;
+                    case "storageCapacity":
+                        if (laptop.getStorageCapacity() < (int) value) {
+                            passFilter = false;
+                        }
+                        break;
+                    case "operatingSystem":
+                        if (!laptop.getOperatingSystem().equalsIgnoreCase((String) value)) {
+                            passFilter = false;
+                        }
+                        break;
+                    case "color":
+                        if (!laptop.getColor().equalsIgnoreCase((String) value)) {
+                            passFilter = false;
+                        }
+                        break;
+                    case "displaySize":
+                        if (laptop.getDisplaySize() < (int) value) {
+                            passFilter = false;
+                        }
+                        break;
+
+                    default:
+                        System.out.println("Invalid filter criteria: " + key);
+                }
+            }
+
+            if (passFilter) {
+                matchingBrands.add(laptop.getBrand());
+            }
+        }
+
+        if (!matchingBrands.isEmpty()) {
+            System.out.println("Предложенные бренды ноутбуков, отвечающих критериям: " + matchingBrands);
+        } else {
+            System.out.println("Нет ноутбуков, соответствующих заявленным критериям.");
+        }
+    }
+
 }
