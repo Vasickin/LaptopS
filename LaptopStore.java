@@ -15,3 +15,10 @@
 // -Отфильтровать ноутбуки их первоначального множества и вывести проходящие по
 // условиям.
 
+package LaptopStore;
+
+import java.util.*;
+
+public class LaptopStore {
+    
+}
