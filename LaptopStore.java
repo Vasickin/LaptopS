@@ -115,4 +115,31 @@ public class LaptopStore {
         return filters;
     }
 
+        public static void main(String[] args) {
+        LaptopStore store = new LaptopStore();
+
+        // Добавление ноутбуков в магазин
+        store.addLaptop(new Laptop("Asus", 8, 256, "Windows", 13, "Silver"));
+        store.addLaptop(new Laptop("Acer", 16, 512, "Windows", 15, "Black"));
+        store.addLaptop(new Laptop("Fujitsu", 32, 1024, "Windows", 17, "White"));
+        store.addLaptop(new Laptop("HP", 8, 256, "Windows", 13, "Silver"));
+        store.addLaptop(new Laptop("Dell", 16, 512, "Windows", 17, "Black"));
+        store.addLaptop(new Laptop("MSI", 32, 1024, "FreeOS", 13, "White"));
+        store.addLaptop(new Laptop("Samsung", 8, 256, "Windows", 17, "Silver"));
+        store.addLaptop(new Laptop("Microsoft", 16, 512, "FreeOS", 13, "Black"));
+        store.addLaptop(new Laptop("Razer", 32, 1024, "Windows", 15, "White"));
+        store.addLaptop(new Laptop("LG", 16, 1024, "Windows", 13, "Silver"));
+        store.addLaptop(new Laptop("Apple", 16, 512, "MacOS", 17, "Silver"));
+        store.addLaptop(new Laptop("Lenovo", 8, 256, "Linux", 15, "Silver"));
+        store.addLaptop(new Laptop("Toshiba", 16, 512, "Windows", 15, "Black"));
+        store.addLaptop(new Laptop("Sony", 8, 256, "FreeOS", 17, "Silver"));
+        store.addLaptop(new Laptop("Huawei", 16, 512, "Windows", 15, "Black"));
+
+        // Получение критериев фильтрации от пользователя
+        Map<String, Object> filters = store.getFiltersFromUser();
+
+        // Фильтрация ноутбуков и вывод результатов
+        store.filterLaptops(filters);
+    }
+
 }
