@@ -23,4 +23,8 @@ public class LaptopStore {
     private Set<Laptop> laptops = new HashSet<>();
     private Scanner scanner = new Scanner(System.in);
 
+    public void addLaptop(Laptop laptop) {
+        laptops.add(laptop);
+    }
+
 }
