@@ -101,7 +101,7 @@ public class LaptopStore {
 
         scanner.nextLine(); // Очистка буфера после ввода int для корректного считывания строк
 
-        System.out.print("Введите цвет: ");
+        System.out.print("Введите цвет (Black, White, Silver): ");
         String color = scanner.nextLine();
         filters.put("color", color);
 
