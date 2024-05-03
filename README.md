@@ -26,3 +26,4 @@
 ```sh
 store.addLaptop(new Laptop("Lenovo", 8, 256, "Linux", 15, "Silver"));
 ```
+2. Программа чувствительна к регистру.
